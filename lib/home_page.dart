@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget videoDesc(userName, description, profile) {
     return Container(
-      padding: EdgeInsets.only(left: 16, bottom: 60),
+      padding: EdgeInsets.only(left: 16, bottom: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,24 +130,43 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               userProfile(profile),
               Padding(
-                padding: EdgeInsets.only(top: 7, bottom: 7, left: 10),
-                child: Text(
-                  "@$userName",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500),
+                padding: EdgeInsets.only(top: 7, bottom: 7, left: 5),
+                child: Card(
+                  color: Colors.black12,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      "@$userName",
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
                 ),
               ),
             ],
           ),
           Padding(
             padding: EdgeInsets.only(top: 4, bottom: 7),
-            child: Text(description,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300)),
+            child: Card(
+              color: Colors.black12,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(description,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 10.0,
+                            color: Colors.black,
+                            offset: Offset(5.0, 5.0),
+                          ),
+                        ],
+                        fontWeight: FontWeight.w300)),
+              ),
+            ),
           ),
         ],
       ),
@@ -193,7 +212,13 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
             child: Text(
               label ?? "",
-              style: TextStyle(fontSize: 10, color: Colors.white),
+              style: TextStyle(shadows: [
+                Shadow(
+                  blurRadius: 10.0,
+                  color: Colors.black,
+                  offset: Offset(5.0, 5.0),
+                ),
+              ], fontSize: 10, color: Colors.white,fontWeight:FontWeight.bold)
             ),
           )
         ],

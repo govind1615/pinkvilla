@@ -25,7 +25,6 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(_controller.value.duration);
     return Center(
         child: _controller.value.initialized
             ? AspectRatio(
